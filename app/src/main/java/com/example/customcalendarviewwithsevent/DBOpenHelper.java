@@ -31,13 +31,14 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    public void SaveEvent(String event,String time,String date,String month,String year,SQLiteDatabase database){
+    public void SaveEvent(String event,String time,String date,String month,String year,String notify,SQLiteDatabase database){
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBstructure.EVENT,event);
         contentValues.put(DBstructure.TIME,time);
         contentValues.put(DBstructure.DATE,date);
         contentValues.put(DBstructure.MONTH,month);
         contentValues.put(DBstructure.YEAR,year);
+        contentValues.put(DBstructure.Notify,notify);
         database.insert(DBstructure.EVENT_TABLE_NAME,null,contentValues);
 
     }
